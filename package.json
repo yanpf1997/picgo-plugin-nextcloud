@@ -1,12 +1,11 @@
 {
   "name": "picgo-plugin-nextcloud",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "picgo uploader for nextcloud",
   "main": "src/index.js",
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "patch": "npm version patch && git push origin master && git push origin --tags",

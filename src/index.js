@@ -64,10 +64,10 @@ module.exports = (ctx) => {
         auth: userConfig['auth'],
         headers: headers
       })
-      ctx.emit('notification', {
-        title: '删除提示',
-        body: `已删除文件${fileName}`
-      })
+      // ctx.emit('notification', {
+      //   title: '删除提示',
+      //   body: `已删除文件${fileName}`
+      // })
     } catch(err) {
       ctx.emit('notification', {
         title: '删除失败',
@@ -97,10 +97,10 @@ module.exports = (ctx) => {
       ctx.saveConfig(uploaded)
     }
 
-    ctx.emit('notification', {
-      title: '删除提示',
-      body: fail.length === 0 ? '成功同步删除' : `删除失败${fail.length}个`
-    })
+    // ctx.emit('notification', {
+    //   title: '删除提示',
+    //   body: fail.length === 0 ? '成功同步删除' : `删除失败${fail.length}个`
+    // })
   }
 
   const uploader = async function (ctx) {
