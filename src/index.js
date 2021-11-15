@@ -59,6 +59,7 @@ module.exports = (ctx) => {
     let headers = getPubHeaders()
     try {
       await ctx.Request.request({
+        rejectUnauthorized: false,
         method: 'delete',
         url: `${userConfig['baseUrl']}/${encodeURI(fileName)}`,
         auth: userConfig['auth'],
@@ -117,6 +118,7 @@ module.exports = (ctx) => {
         let headers = getPubHeaders()
         const contentType = mimeTypes[image.extname] || 'application/octet-stream'
         await ctx.Request.request({
+          rejectUnauthorized: false,
           method: 'put',
           url: `${userConfig['baseUrl']}/${encodeURI(image.fileName)}`,
           auth: userConfig['auth'],
@@ -128,6 +130,7 @@ module.exports = (ctx) => {
           body: data
         })
         let body = await ctx.Request.request({
+          rejectUnauthorized: false,
           method: 'post',
           url: userConfig['shareUrl'],
           headers: headers,
